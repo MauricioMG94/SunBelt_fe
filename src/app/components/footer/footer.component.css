@@ -1,0 +1,22 @@
+.icons-container img {
+    height: 30px;
+    opacity: 50%;
+}
+
+.icons-container img:hover {
+    height: 30px;
+    opacity: 1;
+}
+
+.consult_icon {
+    height: 40px;
+}
+
+.contact_icons img {
+    height: 15px;
+    opacity: 50%;
+}
+
+.text_container {
+    text-align: justify;
+}

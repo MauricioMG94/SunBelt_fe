@@ -1,0 +1,30 @@
+.main_container {
+    min-height: 100%;
+}
+
+.home_tittle, .home_content {
+    text-align: center;
+}
+
+.badge-info {
+    background-color: #4f4f4f;
+    width: 7.5rem;
+    height: 2rem;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    margin-right: 0.5rem;
+}
+
+.list-group-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+}
+
+.list-group-item:hover{
+    background-color: #4f4f4f;
+    color: white;
+}
+

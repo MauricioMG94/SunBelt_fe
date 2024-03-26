@@ -1,0 +1,46 @@
+<div class="container main_container">
+    <div class="row">
+        <div class="col-md-7 my-3">
+            <div class="container mt-3">
+                <h2 class="home_tittle mb-3">Bienvenido a Consultas.com</h2>
+                <p class="home_content mb-3">Aquí puedes obtener la información de tu usuario realizando la consulta con
+                    tu documento.</p>
+                <img src="../../../assets/images/home.png" class="mx-auto d-block my-2" style="width:60%">
+            </div>
+        </div>
+        <div class="col-md-5 my-auto ">
+            <div class="card">
+                <h5 class="card-header">Realiza tu consulta</h5>
+                <div class="card-body">
+                    <form [formGroup]="idInfoForm">
+                        <p class="card-text">Seleccione el tipo de documento</p>
+                        <div class="form-floating mb-3 mt-3">
+                            <select class="form-select" id="docTypeSelect" formControlName="selectedDocType"
+                                name="docType">
+                                <option *ngFor="let docType of docTypes" [value]="docType">{{ docType }}</option>
+                            </select>
+                            <label for="docTypeSelect">Tipo de Documento</label>
+                        </div>
+                        <p class="card-text">Ingresa el número de documento</p>
+                        <div class="form-floating mb-3 mt-3">
+                            <input type="text" id="typeText" class="form-control" name="idNumber"
+                                formControlName="idNumber" maxlength="10"/>
+                            <label for="idNumber">Número de documento</label>
+                        </div>
+                        <button class="btn btn-primary" (click)="onSubmit()" [disabled]="!idInfoForm.valid">
+                            <div *ngIf="loading == true">
+                                <div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                Buscando
+                            </div>
+                            <div *ngIf="loading == false">
+                                Buscar
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

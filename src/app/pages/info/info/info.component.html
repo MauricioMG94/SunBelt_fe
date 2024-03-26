@@ -1,0 +1,59 @@
+<div class="container main_container">
+    <div *ngIf="information" class="row">
+        <div class="col-md-7 my-3">
+            <div class="container mt-3">
+                <h2 class="home_tittle mb-3">Bienvenido a Consultas.com</h2>
+                <p class="home_content mb-3">La consulta ha sido exitosa, aquí tienes la información para el usuario <strong> {{information.firstName}} {{information.firstLastName}} </strong>.</p>
+                <img src="../../../assets/images/info.png" class="mx-auto d-block my-2" style="width:60%">
+            </div>
+        </div>
+        <div class="col-md-5 my-auto">
+            <div class="card">
+                <h5 class="card-header">Usuario {{information.documentType}} {{information.identificationNumber}}</h5>
+                <div class="card-body">
+                    <ul class="list-group list-group-light">
+                        <li class="list-group-item">
+                            <span class="badge badge-info">Primer nombre :</span>
+                            {{information.firstName}}
+                        </li>
+                        <li class="list-group-item">
+                            <span class="badge badge-info">Segundo nombre :</span>
+                            {{information.middleName}}</li>
+                        <li class="list-group-item">
+                            <span class="badge badge-info">Primer apellido :</span>
+                            {{information.firstLastName}}</li>
+                        <li class="list-group-item">
+                            <span class="badge badge-info">Segundo apellido :</span>
+                            Segundo apellido: {{information.secondLastName}}</li>
+                        <li class="list-group-item">
+                            <span class="badge badge-info">Teléfono :</span>
+                            {{information.telephoneNumber}}</li>
+                        <li class="list-group-item">
+                            <span class="badge badge-info">Dirección :</span>
+                            {{information.address}}</li>
+                        <li class="list-group-item">
+                            <span class="badge badge-info">Ciudad : </span>
+                            {{information.cityOfResidence}}</li>
+                      </ul>
+                    <button class="btn btn-primary mt-3" (click)="goToHome()">
+                        Volver
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!information" class="row">
+        <div class="col-md-12 my-3">
+            <div class="container mt-3">
+                <h2 class="home_tittle mb-3">Ha ocurrido algo inesperado</h2>
+                <p class="home_content mb-3">Por favor regrese al inicio.</p>
+                <div class="card-body d-flex justify-content-center">
+                    <button class="btn btn-primary" (click)="goToHome()">
+                        Volver
+                    </button>
+                </div>
+                <img src="../../../assets/images/error.png" class="mx-auto d-block" style="width:30%">
+            </div>
+        </div>
+    </div>
+</div>
