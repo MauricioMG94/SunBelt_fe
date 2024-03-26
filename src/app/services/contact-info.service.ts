@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactInfoService {
 
-  private baseUrl = 'http://localhost:8090';
-
+  private baseUrl = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   async getPersonInfo(docType: string, idNumber: string): Promise<any> {
